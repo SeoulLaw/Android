@@ -1,9 +1,8 @@
-package com.example.dkdk6.seoullaw;
+package com.example.dkdk6.seoullaw.Activity;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.view.View;
@@ -11,9 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.dkdk6.seoullaw.R;
 import com.tsengvn.typekit.TypekitContextWrapper;
-
-import org.w3c.dom.Text;
 
 /**
  * Created by dkdk6 on 2017-08-14.
