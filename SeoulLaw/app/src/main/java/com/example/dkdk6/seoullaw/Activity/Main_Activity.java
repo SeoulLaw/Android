@@ -29,15 +29,15 @@ public class Main_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         infoText = (TextView)findViewById(R.id.topText);
         // Tab
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
+        final TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setIcon(
-                R.drawable.login_image));
+                R.drawable.home_sel));
         tabLayout.addTab(tabLayout.newTab().setIcon(
-                R.drawable.login_image));
+                R.drawable.lawlist_unsel));
         tabLayout.addTab(tabLayout.newTab().setIcon(
-                R.drawable.login_image));
+                R.drawable.talk_unsel));
         tabLayout.addTab(tabLayout.newTab().setIcon(
-                R.drawable.login_image));
+                R.drawable.mypage_unsel));
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         adapter = new TabAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(adapter);
@@ -49,16 +49,32 @@ public class Main_Activity extends AppCompatActivity {
                 if(tab.getPosition()==0){
                     Log.d("Fragment Home","Selected");
                     infoText.setText("서울로");
+                    tab.setIcon(R.drawable.home_sel);
+                    tabLayout.getTabAt(1).setIcon(R.drawable.lawlist_unsel);
+                    tabLayout.getTabAt(2).setIcon(R.drawable.talk_unsel);
+                    tabLayout.getTabAt(3).setIcon(R.drawable.mypage_unsel);
                 }
                 else if(tab.getPosition()==1){
                     Log.d("Fragment Info","Selected");
                     infoText.setText("법률보기");
+                    tab.setIcon(R.drawable.lawlist_sel);
+                    tabLayout.getTabAt(0).setIcon(R.drawable.home_unsel);
+                    tabLayout.getTabAt(2).setIcon(R.drawable.talk_unsel);
+                    tabLayout.getTabAt(3).setIcon(R.drawable.mypage_unsel);
                 }else if(tab.getPosition()==2){
                     Log.d("Fragment Talk","Selected");
                     infoText.setText("법률토크");
+                    tab.setIcon(R.drawable.talk_sel);
+                    tabLayout.getTabAt(0).setIcon(R.drawable.home_unsel);
+                    tabLayout.getTabAt(1).setIcon(R.drawable.lawlist_unsel);
+                    tabLayout.getTabAt(3).setIcon(R.drawable.mypage_unsel);
                 }else if(tab.getPosition()==3){
                     Log.d("Fragment MyPage","Selected");
                     infoText.setText("마이페이지");
+                    tab.setIcon(R.drawable.user);
+                    tabLayout.getTabAt(0).setIcon(R.drawable.home_unsel);
+                    tabLayout.getTabAt(1).setIcon(R.drawable.lawlist_unsel);
+                    tabLayout.getTabAt(2).setIcon(R.drawable.talk_unsel);
                 }
               //  tab.getIcon().setColorFilter(getResources().getColor(R.color.pointColor), PorterDuff.Mode.SRC_IN);
             }

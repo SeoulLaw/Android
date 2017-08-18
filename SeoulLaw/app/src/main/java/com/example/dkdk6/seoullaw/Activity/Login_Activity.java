@@ -69,7 +69,10 @@ public class Login_Activity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                query = address + "id=" + inputID.getText().toString() + "&" + "pw=" + inputPW.getText().toString() + "&" + "sign_up=" + singupFlag;
+                Intent intent = new Intent(Login_Activity.this, Main_Activity.class);
+                startActivity(intent);
+                finish();
+/*                query = address + "id=" + inputID.getText().toString() + "&" + "pw=" + inputPW.getText().toString() + "&" + "sign_up=" + singupFlag;
                 final NetworkTask networkTask = new NetworkTask(query, null);
                 networkTask.execute();
                 //receive = networkTask.doInBackground();
@@ -94,7 +97,7 @@ public class Login_Activity extends AppCompatActivity {
                             e.printStackTrace();
                         }
                     }
-                }, 500);
+                }, 500);*/
             }
         });
 
